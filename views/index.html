@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%= title %></title>
+		<link rel='stylesheet' href='/stylesheets/style.css' />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+		<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+	</head>
+	<body>
+		<section class="hero is-primary is-medium">
+			<!-- Hero head: will stick at the top -->
+			<div class="hero-head">
+				<nav class="navbar">
+					<div class="container">
+						<div class="navbar-brand">
+							<a class="navbar-item">
+								<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Star_wars2.svg/1200px-Star_wars2.svg.png" alt="Logo">
+							</a>
+							<span class="navbar-burger burger" data-target="navbarMenuHeroA">
+								<span></span>
+								<span></span>
+								<span></span>
+							</span>
+						</div>
+						<div id="navbarMenuHeroA" class="navbar-menu">
+							<div class="navbar-end">
+								<span class="navbar-item">
+									<a href="/shoppingcart" class="button is-primary is-inverted">
+										<span class="icon">
+											<i class="fas fa-shopping-cart"></i>
+										</span>
+										<span>My Cart</span>
+									</a>
+								</span>
+							</div>
+						</div>
+					</div>
+				</nav>
+			</div>
+			<!-- Hero content: will be in the middle -->
+			<div class="hero-body">
+				<div class="container has-text-centered">
+					<h1 class="title">
+					Star Wars
+					</h1>
+					<h2 class="subtitle">
+					A Complete Collection of an Epic Tale.
+					</h2>
+				</div>
+			</div>
+			<!-- Hero footer: will stick at the bottom -->
+		</section>
+		<br>
+		<section>
+			<div class="container">
+				<% for (var i = 0; i < movies.length; i+=3) { %>
+					<div class="columns is-mobile">
+						<% if (i < movies.length) { %> 
+							<div class="column">
+								<div class="card">
+									<div class="card-content">
+										<p class="title"><%= movies[i].title %></p>
+										<p class="subtitle">$<%= movies[i].price %></p>
+									</div>
+									<footer class="card-footer">
+										<a href="#" class="card-footer-item addToCart" id="<%=movies[i].title%>" 
+											price="<%=movies[i].price%>">
+											<span><i class="fas fa-shopping-cart"></i> Add to Cart</span>
+										</a>
+									</footer>
+								</div>
+							</div>
+						<% } else { %>
+							<div class="column"></div>
+						<% } %>
+
+						<% if (i + 1 < movies.length) { %>
+						<div class="column">
+								<div class="card">
+									<div class="card-content">
+										<p class="title"><%= movies[i+1].title %></p>
+										<p class="subtitle">$<%= movies[i+1].price %></p>
+									</div>
+									<footer class="card-footer">
+										<a href="#" class="card-footer-item addToCart" id="<%=movies[i+1].title%>"
+											price="<%=movies[i+1].price%>">
+											<span><i class="fas fa-shopping-cart"></i> Add to Cart</span>
+										</a>
+									</footer>
+								</div>
+							</div>
+						<% } else { %>
+							<div class="column"></div>
+						<% } %>
+
+						<% if (i + 2 < movies.length) { %>
+						<div class="column">
+								<div class="card">
+									<div class="card-content">
+										<p class="title"><%= movies[i+2].title %></p>
+										<p class="subtitle">$<%= movies[i+2].price %></p>
+									</div>
+									<footer class="card-footer">
+										<a href="#" class="card-footer-item addToCart" id="<%=movies[i+2].title%>" 
+											price="<%=movies[i+2].price%>">
+											<span><i class="fas fa-shopping-cart"></i> Add to Cart</span>
+										</a>
+									</footer>
+								</div>
+							</div>
+						<% } else { %>
+							<div class="column"></div>
+						<% } %>
+					</div>
+				<% } %>
+			</div>
+		</section>
+	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="/javascripts/features.js"></script>
+</html>

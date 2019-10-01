@@ -1,0 +1,26 @@
+[
+	{
+		"title": "Star Wars Episode IV DVD",
+		"price": 20
+	}, 
+	{
+		"title": "Star Wars Episode V DVD", 
+		"price": 20
+	},
+	{
+		"title": "Star Wars Episode VI DVD",
+		"price": 20
+	},
+	{
+		"title": "Star Wars Episode IV Blu-Ray",
+		"price": 25
+	},
+	{
+		"title": "Star Wars Episode V Blu-Ray",
+		"price": 25
+	},
+	{
+		"title": "Star Wars Episode VI Blu-Ray",
+		"price": 25
+	}
+]
